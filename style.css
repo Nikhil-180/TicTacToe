@@ -49,6 +49,17 @@ h1{
     font-size: 1rem;
     border:none;
 }
+#win{
+    font-size: 18px;
+    background-color: rgb(102, 172, 38);
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px;
+    height:40px;
+    width:150px;
+    line-height: 40px;
+}
+
 
 @media only screen and (max-width: 600px) and ( min-width:340) {
     .container{
