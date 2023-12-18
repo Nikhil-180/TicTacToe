@@ -49,3 +49,33 @@ h1{
     font-size: 1rem;
     border:none;
 }
+
+@media only screen and (max-width: 600px) and ( min-width:340) {
+    .container{
+        text-align: center;
+        height:70vh;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+    }
+    .game{
+        height:55vh;
+        width:55vh;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap:.5rem;
+    
+    }
+    .box{
+        height: 100px;
+        width:100px;
+        border-radius: 15px;
+        border:none;
+        font-size: 35px;
+        color:blue;
+        background-color: rgb(236, 153, 58);
+    }
+    
+}
