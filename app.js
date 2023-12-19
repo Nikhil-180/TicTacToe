@@ -80,13 +80,13 @@ const enableButton = () =>{
         box.innerText="";
     }
     win.innerText = "Result";
-    isWinner = true;
 }
 
 
 
 const newGame = () =>{
     turn = true;
+    isWinner = false;
     enableButton();
 }
 reset.addEventListener("click", newGame);
