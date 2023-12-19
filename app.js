@@ -3,6 +3,7 @@ let reset = document.querySelector("#new");
 const win = document.querySelector("#win");
 let count = 0;
 let turn = true;
+let isWinner = false;
 
 const winner = [
     [0,1,2],
@@ -36,20 +37,22 @@ const checkwinner = () =>{
         if(pos1 !=="" && pos2 !== "" && pos3 !== "")
         {
             
-            if(pos1 === pos2 && pos2 === pos3)
+            if(pos1 === pos2 && pos1 === pos3)
             {
+                
                 wi = pos1 == "X" ? "Player 1" : "Player 2";
-                disableButton();
                 showWinner(wi);
+                disableButton();
+                isWinner = true;
                 
             }
-            else if(count == 9)
-            {
-                win.innerText = `Match draw`;
-                break;
-            }
+        }
+        if(count == 9 && !isWinner)
+        { 
+            win.innerText = `Match draw`;
         }
     }
+    
 }
 
 boxes.forEach((box) => {
@@ -58,14 +61,13 @@ boxes.forEach((box) => {
         {
             box.innerText = "X";
             turn = !turn;
-            count++;
         }
         else{
             box.innerText = "0";
             turn = !turn;
-            count++;
         }
         box.disabled=true;
+        count++;
         checkwinner();
     });
 });
@@ -78,6 +80,7 @@ const enableButton = () =>{
         box.innerText="";
     }
     win.innerText = "Result";
+    isWinner = true;
 }
 
 
